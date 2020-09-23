@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b8ff87;
+  background: #f5f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2903,4 +2903,10 @@ hr {
     width: auto;
     text-align: center;
   }
+}
+.sidebar {
+  left: 0;
+}
+.sidebar-toggle {
+  left: 30px;
 }
