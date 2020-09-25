@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-23T05:35:57.819Z</updated>
+  <updated>2020-09-25T06:33:28.189Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leetcode # 200 Number of Islands</title>
+    <link href="http://yoursite.com/2020/09/24/leetcode-200-Number-of-Islands/"/>
+    <id>http://yoursite.com/2020/09/24/leetcode-200-Number-of-Islands/</id>
+    <published>2020-09-25T06:33:19.000Z</published>
+    <updated>2020-09-25T06:33:28.189Z</updated>
+    
+    <content type="html"><![CDATA[<p>Given a 2d grid map of ‘1’s (land) and ‘0’s (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.</p><p>Example 1:</p><p>Input: grid = [<br>  [“1”,”1”,”1”,”1”,”0”],<br>  [“1”,”1”,”0”,”1”,”0”],<br>  [“1”,”1”,”0”,”0”,”0”],<br>  [“0”,”0”,”0”,”0”,”0”]<br>]<br>Output: 1<br>Example 2:</p><p>Input: grid = [<br>  [“1”,”1”,”0”,”0”,”0”],<br>  [“1”,”1”,”0”,”0”,”0”],<br>  [“0”,”0”,”1”,”0”,”0”],<br>  [“0”,”0”,”0”,”1”,”1”]<br>]<br>Output: 3</p><p>Solution:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int numIslands(char[][] grid) &#123;</span><br><span class="line">        if (grid &#x3D;&#x3D; null || grid.length &#x3D;&#x3D; 0 || grid[0].length &#x3D;&#x3D; 0) &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        int count &#x3D; 0;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; grid.length; i++) &#123;</span><br><span class="line">            for (int j &#x3D; 0; j &lt; grid[0].length; j++) &#123;</span><br><span class="line">                if (grid[i][j] &#x3D;&#x3D; &#39;1&#39;) &#123;</span><br><span class="line">                    dfs(grid,i,j);</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">    private void dfs(char[][] grid, int i, int j) &#123;</span><br><span class="line">        if (i &lt; 0 || i &gt;&#x3D; grid.length || j &lt; 0 || j &gt;&#x3D; grid[0].length || grid[i][j] &#x3D;&#x3D; &#39;0&#39;) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        grid[i][j] &#x3D; &#39;0&#39;;</span><br><span class="line">        dfs(grid,i - 1, j);</span><br><span class="line">        dfs(grid,i + 1, j);</span><br><span class="line">        dfs(grid,i, j - 1);</span><br><span class="line">        dfs(grid,i, j + 1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>The time complexity is O(MN). rows and cols<br>The space compelxity is O(MN).</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Given a 2d grid map of ‘1’s (land) and ‘0’s (water), count the number of islands. An island is surrounded by water and is formed by conne
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode # 1 Two Sum</title>
+    <link href="http://yoursite.com/2020/09/24/leetcode-1-Two-Sum/"/>
+    <id>http://yoursite.com/2020/09/24/leetcode-1-Two-Sum/</id>
+    <published>2020-09-25T06:32:50.000Z</published>
+    <updated>2020-09-25T06:33:06.031Z</updated>
+    
+    <content type="html"><![CDATA[<p> Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p><p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p><p>You can return the answer in any order.</p><p>Example 1:</p><p>Input: nums = [2,7,11,15], target = 9<br>Output: [0,1]<br>Output: Because nums[0] + nums[1] == 9, we return [0, 1].<br>Example 2:</p><p>Input: nums = [3,2,4], target = 6<br>Output: [1,2]<br>Example 3:</p><p>Input: nums = [3,3], target = 6<br>Output: [0,1]</p><p>Constraints:</p><p>2 &lt;= nums.length &lt;= 105<br>-109 &lt;= nums[i] &lt;= 109<br>-109 &lt;= target &lt;= 109<br>Only one valid answer exists.</p><p>Soluion1:<br>two pointer<br>sort the array and use left right pointer</p><p>Solution2:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        if (nums &#x3D;&#x3D; null || nums.length &#x3D;&#x3D; 0) &#123;</span><br><span class="line">            return new int[]&#123;-1,-1&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; map &#x3D; new HashMap&lt;&gt;();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">            int temp &#x3D; target - nums[i];</span><br><span class="line">            if (map.containsKey(temp)) &#123;</span><br><span class="line">                return new int[]&#123;i,map.get(temp)&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                map.put(nums[i],i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return new int[]&#123;-1,-1&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>The time complexity is O(n).<br>The sapce complexity is O(n).</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.&lt;/p&gt;
+&lt;p&gt;You may
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>leetcode # 378 Kth Smallest Element in a Sorted Matrix</title>
